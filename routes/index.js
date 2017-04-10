@@ -6,6 +6,10 @@ mongoose.set('debug', true);
 var User = require('models/user').User;
 var db = mongoose.connection;
 
+/* GET home page. */
+router.get('/', function(req, res, next) {
+    res.render('index', { title: 'Express' });
+});
 //test
 router.get('/users', function (req, res, next) {
     //res.render('index');
@@ -131,8 +135,3 @@ router.post('/api/update/:id', function (req, res) {
 });
 module.exports = router;
 
-
-/* GET home page. */
-router.get('/', function(req, res, next) {
-    res.render('index', { title: 'Express' });
-});
