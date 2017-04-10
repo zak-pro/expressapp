@@ -1,0 +1,13 @@
+{
+  "port": 8080,
+  "mongoose": {
+    "uri": "mongodb://medata:SeHSXkSkeJdq6GjZQpoxSLE0uXZ4gBzGxP8i1tGbBJeoyQ710JvZSsW2jAuG4IRs2rIgITRTZFJ2BxsVxpexPA==@medata.documents.azure.com:10250/?ssl=true",
+    "options": {
+      "server": {
+        "socketOptions": {
+          "keepAlive": 1
+        }
+      }
+    }
+  }
+}
