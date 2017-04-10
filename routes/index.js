@@ -6,11 +6,12 @@ mongoose.set('debug', true);
 var User = require('models/user').User;
 var db = mongoose.connection;
 
-/* GET home page. */
+
 router.get('/', function(req, res, next) {
     res.render('index', { title: 'Express' });
 });
-//test
+
+
 router.get('/users', function (req, res, next) {
     //res.render('index');
     //res.status(status).send("Hello");
@@ -19,9 +20,9 @@ router.get('/users', function (req, res, next) {
     User.find({}, function(err, users) {
         console.log("Number of users into DB: " + users.length);
         console.log("Users: " + users);
+        res.json(users);
     });
 });
-
 router.get('/drop', function (req,res) {
     var db = mongoose.connection.db;
     db.dropDatabase(function () {
@@ -29,6 +30,9 @@ router.get('/drop', function (req,res) {
     });
 
 });
+
+
+
 //Load progress or new user registration
 router.post('/api/download/:id', function (req, res) {
     var id = req.params.id
